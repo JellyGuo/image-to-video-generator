@@ -1,0 +1,60 @@
+# LLM配置
+llm:
+  # 默认使用的LLM
+  default: "llm1"
+  
+  # 可用的LLM列表
+  providers:
+    llm1:
+      name: "OpenAI"
+      endpoint: "https://api.openai.com/v1/chat/completions"
+      api_key: "your_openai_api_key"
+      model: "gpt-4-vision-preview"
+      max_tokens: 1000
+      temperature: 0.7
+      system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
+    
+    llm2:
+      name: "Claude"
+      endpoint: "https://api.anthropic.com/v1/messages"
+      api_key: "your_anthropic_api_key"
+      model: "claude-3-opus-20240229"
+      max_tokens: 1000
+      temperature: 0.7
+      system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
+
+# 视频生成模型配置
+video_generator:
+  # 默认使用的视频生成模型
+  default: "qingque"
+  
+  # 可用的视频生成模型列表
+  providers:
+    qingque:
+      name: "可灵(Qingque)"
+      endpoint: "https://api.klingai.com"
+      access_key: "896ca61e07784b4dae29f1b2b23cbadd"
+      secret_key: "4e79c759b8be4790bdcb8d328c7fcf3e"
+      model: "kling-v1"
+      max_duration: 5  # 秒
+    
+    video_model1:
+      name: "Runway Gen-2"
+      endpoint: "https://api.runwayml.com/v1/inference"
+      api_key: "your_runway_api_key"
+      model: "gen-2"
+      max_duration: 4  # 秒
+    
+    video_model2:
+      name: "Pika Labs"
+      endpoint: "https://api.pika.art/v1/generate"
+      api_key: "your_pika_api_key"
+      model: "pika-1.0"
+      max_duration: 5  # 秒
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+  rotation: "10 MB"
+  retention: "1 month"
