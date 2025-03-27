@@ -1,11 +1,11 @@
 # LLM配置
 llm:
   # 默认使用的LLM
-  default: "llm1"
+  default: "OpenAI"
   
   # 可用的LLM列表
   providers:
-    llm1:
+    OpenAI:
       name: "OpenAI"
       endpoint: "https://api.openai.com/v1/chat/completions"
       api_key: "your_openai_api_key"
@@ -14,7 +14,7 @@ llm:
       temperature: 0.7
       system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
     
-    llm2:
+    Claude:
       name: "Claude"
       endpoint: "https://api.anthropic.com/v1/messages"
       api_key: "your_anthropic_api_key"
@@ -23,7 +23,7 @@ llm:
       temperature: 0.7
       system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
     
-    llm3:
+    openai-api-compatible:
       name: "openai-api-compatible"
       endpoint: "https://your-openai-compatible-api-endpoint/v1/chat/completions"
       api_key: "your_api_key"
@@ -39,30 +39,16 @@ llm:
 # 视频生成模型配置
 video_generator:
   # 默认使用的视频生成模型
-  default: "qingque"
+  default: "kling"
   
   # 可用的视频生成模型列表
   providers:
-    qingque:
-      name: "可灵(Qingque)"
+    kling:
+      name: "可灵(kling)"
       endpoint: "https://api.klingai.com"
-      access_key: "#"
-      secret_key: "#"
-      model: "kling-v1"
-      max_duration: 5  # 秒
-    
-    video_model1:
-      name: "Runway Gen-2"
-      endpoint: "https://api.runwayml.com/v1/inference"
-      api_key: "your_runway_api_key"
-      model: "gen-2"
-      max_duration: 4  # 秒
-    
-    video_model2:
-      name: "Pika Labs"
-      endpoint: "https://api.pika.art/v1/generate"
-      api_key: "your_pika_api_key"
-      model: "pika-1.0"
+      access_key: "your_kling_access_key"
+      secret_key: "your_kling_secret"
+      model: "kling-v1-5"
       max_duration: 5  # 秒
 
 # 日志配置

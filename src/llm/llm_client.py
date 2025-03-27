@@ -3,6 +3,7 @@ import json
 import base64
 from abc import ABC, abstractmethod
 from loguru import logger
+from .openai_compatible_client import OpenAICompatibleClient
 
 class LLMClient(ABC):
     """LLM客户端抽象基类"""
@@ -182,8 +183,6 @@ def get_llm_client(config):
     name = config.get('name', '').lower()
     
     if 'compatible' in name or 'openai-api-compatible' in name:
-        # 导入兼容客户端
-        from .openai_compatible_client import OpenAICompatibleClient
         return OpenAICompatibleClient(config)
     elif 'openai' in name:
         return OpenAIClient(config)
