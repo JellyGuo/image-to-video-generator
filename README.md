@@ -12,7 +12,7 @@
 - 支持在不同LLM之间切换
 - 支持自定义系统提示(System Prompt)
 - 命令行界面操作简单
-- **默认使用可灵(Qingque)视频生成API**
+- **默认使用可灵(kling)视频生成API**
 - **支持OpenAI API兼容的LLM服务**
 - **支持自动使用项目images目录中的图片**
 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ### 配置
 
-在使用前，请在`config/config.yaml`中配置您的LLM API密钥和端点。项目已默认配置可灵(Qingque)视频生成API。
+在使用前，请在`config/config.yaml`中配置您的LLM API密钥和端点。项目已默认配置可灵(kling)视频生成API。
 
 ### 准备图片
 
@@ -53,7 +53,7 @@ python src/main.py --list-providers
 ### 指定使用的LLM和视频生成模型
 
 ```bash
-python src/main.py --image path/to/image.jpg --llm llm1 --video-model qingque
+python src/main.py --image path/to/image.jpg --llm llm1 --video-model kling
 ```
 
 ## 项目结构
@@ -82,6 +82,4 @@ image_to_video_generator/
 
 ## 支持的视频生成模型
 
-1. **可灵(Qingque)** - 默认视频生成模型
-2. **Runway Gen-2**
-3. **Pika Labs**
+1. **可灵(kling)** - 默认视频生成模型

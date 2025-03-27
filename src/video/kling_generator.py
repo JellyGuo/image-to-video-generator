@@ -6,8 +6,8 @@ import jwt
 from datetime import datetime
 from loguru import logger
 
-class QingqueGenerator:
-    """可灵(Qingque/Kling)视频生成API客户端"""
+class KlingGenerator:
+    """可灵(Kling)视频生成API客户端"""
     
     def __init__(self, config):
         """
@@ -17,7 +17,7 @@ class QingqueGenerator:
             config: 视频生成模型配置字典
         """
         self.config = config
-        self.name = config.get('name', 'Qingque')
+        self.name = config.get('name', 'Kling')
         self.endpoint = config.get('endpoint', 'https://api.klingai.com')
         self.access_key = config.get('access_key')
         self.secret_key = config.get('secret_key')
