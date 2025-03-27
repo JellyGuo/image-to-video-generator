@@ -181,14 +181,14 @@ def get_llm_client(config):
     """
     name = config.get('name', '').lower()
     
-    if 'openai' in name:
-        return OpenAIClient(config)
-    elif 'claude' in name or 'anthropic' in name:
-        return ClaudeClient(config)
-    elif 'compatible' in name or 'compatibility' in name:
+    if 'compatible' in name or 'openai-api-compatible' in name:
         # 导入兼容客户端
         from .openai_compatible_client import OpenAICompatibleClient
         return OpenAICompatibleClient(config)
+    elif 'openai' in name:
+        return OpenAIClient(config)
+    elif 'claude' in name or 'anthropic' in name:
+        return ClaudeClient(config)
     else:
         logger.error(f"不支持的LLM类型: {name}")
         raise ValueError(f"不支持的LLM类型: {name}")

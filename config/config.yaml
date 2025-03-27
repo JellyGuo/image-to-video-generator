@@ -22,6 +22,19 @@ llm:
       max_tokens: 1000
       temperature: 0.7
       system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
+    
+    llm3:
+      name: "openai-api-compatible"
+      endpoint: "https://your-openai-compatible-api-endpoint/v1/chat/completions"
+      api_key: "your_api_key"
+      model: "your_model_name"
+      max_tokens: 1000
+      temperature: 0.7
+      system_prompt: "你是一个专业的视频脚本编剧。请根据提供的图片，创作一段详细的视频脚本或旁白。描述应该包含场景、情感、动作和故事情节，以便能够用于生成高质量的视频。"
+      image_format: "base64"
+      vision_api: true
+      api_version: ""
+      organization: ""
 
 # 视频生成模型配置
 video_generator:
