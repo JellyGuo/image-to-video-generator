@@ -33,8 +33,8 @@ video_generator:
     qingque:
       name: "可灵(Qingque)"
       endpoint: "https://api.klingai.com"
-      access_key: "896ca61e07784b4dae29f1b2b23cbadd"
-      secret_key: "4e79c759b8be4790bdcb8d328c7fcf3e"
+      access_key: "#"
+      secret_key: "#"
       model: "kling-v1"
       max_duration: 5  # 秒
     
